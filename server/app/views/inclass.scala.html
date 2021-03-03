@@ -1,0 +1,21 @@
+@(data: Array[Array[Int]])
+
+@main("In Class HTML Stuff") {
+  <h1>This is our template</h1>
+  <h2>H2 Header</h2>
+
+  <table id="table">
+      <thead>
+
+      </thead>
+      <tbody>
+          @for(arr <- data) {
+            <tr>
+              @for(x <- arr) {
+                  <td>@x</td>
+              }
+            </tr>
+          }
+      </tbody>
+  </table>
+}

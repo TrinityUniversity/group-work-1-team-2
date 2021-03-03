@@ -3,7 +3,8 @@
 # ~~~~
 
 # Home page
-GET        /                             edu.trinity.videoquizreact.controllers.Application.index
+GET        /                             controllers.Application.index
+GET        /inclass                      controllers.Application.inclass
 
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)

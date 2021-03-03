@@ -1,4 +1,4 @@
-package edu.trinity.videoquizreact.controllers
+package controllers
 
 import javax.inject._
 
@@ -12,4 +12,8 @@ class Application @Inject()(cc: ControllerComponents) extends AbstractController
     Ok(views.html.index(SharedMessages.itWorks))
   }
 
+  def inclass = Action {
+    val arr = Array.fill(10)(Array.fill(10)(scala.util.Random.nextInt(100)))
+    Ok(views.html.inclass(arr))
+  }
 }
