@@ -5,6 +5,10 @@
 # Home page
 GET        /                             controllers.Application.index
 GET        /inclass                      controllers.Application.inclass
+GET        /form                         controllers.Application.form(name, color)
+GET        /username                     controllers.Application.username
++ nocsrf
+POST       /usernamePost                 controllers.Application.usernamePost
 
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)

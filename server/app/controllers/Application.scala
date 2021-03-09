@@ -16,4 +16,21 @@ class Application @Inject()(cc: ControllerComponents) extends AbstractController
     val arr = Array.fill(10)(Array.fill(10)(scala.util.Random.nextInt(100)))
     Ok(views.html.inclass(arr))
   }
+
+  def form(name: String, color: String) = Action {
+    Ok(views.html.color(name, color))
+  }
+
+  def username = Action {
+    Ok(views.html.username())
+  }
+
+  def usernamePost() = Action { request =>
+    val postVals = request.body.asFormUrlEncoded
+    postVals.map{ args =>
+      val username = args("username").head
+      Ok(views.html.username_homepage(username))
+    }.getOrElse(Ok("Error"))
+
+  }
 }
