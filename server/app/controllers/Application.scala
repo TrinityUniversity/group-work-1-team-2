@@ -1,6 +1,7 @@
 package controllers
 
 import javax.inject._
+import models.StudentGraph
 
 import edu.trinity.videoquizreact.shared.SharedMessages
 import play.api.mvc._
@@ -18,7 +19,8 @@ class Application @Inject()(cc: ControllerComponents) extends AbstractController
   }
 
   def form(name: String, color: String) = Action {
-    Ok(views.html.color(name, color))
+    val friends = StudentGraph.getFriends(name)
+    Ok(views.html.color(name, color, friends))
   }
 
   def username = Action {
