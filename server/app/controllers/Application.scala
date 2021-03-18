@@ -35,4 +35,8 @@ class Application @Inject()(cc: ControllerComponents) extends AbstractController
     }.getOrElse(Ok("Error"))
 
   }
+
+  def logout() = Action {
+    Ok(views.html.index(SharedMessages.itWorks))
+  }
 }
